@@ -1,7 +1,6 @@
 {
   "name": "simplefolio",
   "version": "1.0.1",
-  "private": "true",
   "description": "A clean, beautiful and responsive portfolio template for Developers!",
   "main": "index.js",
   "scripts": {
@@ -42,5 +41,8 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "tilt.js": "^1.2.1"
+  },
+  "engines": {
+    "node": "14.17.0"
   }
 }
