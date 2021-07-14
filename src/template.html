@@ -33,9 +33,26 @@
     <script>
       ScrollReveal({ reset: false });
     </script>
+    <script>
+var slideIndex = 1;
+showDivs(slideIndex);
 
-    <!-- Remove this script once you setup your custom portfolio -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+    </script>
+
   </head>
 
   <!-- Follow the HTML instructions to create your stunning portfolio website -->
@@ -68,17 +85,31 @@
             <div class="about-wrapper__image">
               <img
                 alt="Profile Image"
-                class="img-fluid rounded shadow-lg"
-                height="auto"
+                class="img-fluid rounded shadow-lg mySlides"
+                height="600px"
                 width="300px"
-                src="assets/placeholder.png"
+                src="assets/myphoto.JPG"
                 alt="Profile Image"
+                style="height: 500px"
+                
               />
+              <img
+              alt="Profile Image"
+              class="img-fluid rounded shadow-lg mySlides"
+              height="600px"
+              width="300px"
+              src="assets/familyphoto.png"
+              alt="Profile Image"
+              style="display: none; height: 500px"
+            />
             </div>
+            <input type="checkbox" id="animation2">
+            <label for="animation2">
+              <div class="arrow" style="margin-bottom: 20px" onclick="plusDivs(-1)"></div>
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__info">
-              <p class="about-wrapper__info-text">
+              <p class="about-wrapper__info-text" style="margin-top: 25px">
                 A web developer, homesteader, husband and father, I have been working with and learning Javascript, PHP, React.JS, and more for over two years. 
               </p>
               <p class="about-wrapper__info-text">
@@ -188,11 +219,8 @@
                 <h3 class="project-wrapper__text-title">Quote Generator</h3>
                 <div>
                   <p class="mb-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Excepturi neque, ipsa animi maiores repellendus distinctio
-                    aperiam earum dolor voluptatum consequatur blanditiis
-                    inventore debitis fuga numquam voluptate ex architecto
-                    itaque molestiae.
+                    This Javascript quote generator pulls from a large list of quotes using the fetch API and allows a user to 
+                    tweet out a quote they enjoy.
                   </p>
                 </div>
                 <a
